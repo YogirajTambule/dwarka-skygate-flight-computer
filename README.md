@@ -4,11 +4,11 @@ Dual-bus avionics for an experimental rocket, built on the Raspberry Pi Pico W (
 
 **Status:** ground-demo stage. The breadboard rig runs standalone off a power bank and transmits live telemetry to a laptop receiver. Not yet flight-ready; see [Roadmap](#roadmap).
 
-![Breadboard rig](docs/images/breadboard_rig.png)
+![Breadboard rig](breadboard_rig.png)
 
 ## Architecture
 
-![System architecture](docs/images/architecture.png)
+![System architecture](architecture.png)
 
 | Block | Part | Interface |
 | --- | --- | --- |
@@ -56,7 +56,7 @@ The checksum is an 8-bit XOR of every byte between `$` and `*`. `pkt_id` wraps a
 | `firmware/` | Pico code: `main.py` (boot + telemetry loop), `bmp280.py` and `lsm6ds3.py` (sensor drivers with retry and error handling), `telemetry.py` (packet framing) |
 | `ground_station/` | `lora_gcs_receiver.py`: pyserial receiver that validates checksums, prints a live table and reports packet loss |
 | `bench/` | Small LoRa link test scripts used during bring-up |
-| `docs/images/` | Architecture diagram and rig photo |
+| `architecture.png`, `breadboard_rig.png` | Architecture diagram and rig photo used in this README |
 
 ## Run it
 
@@ -83,6 +83,6 @@ Replace `COM5` with the port the CP2102 appears as.
 
 ## About
 
-Part of Dwarka SkyGate, a student-led experimental rocketry project. Avionics, firmware and ground station by [Yogiraj Tambule](https://github.com/YogirajTambule); airframe, propulsion and hardware prototyping by the rest of the team. Build log on X: [@YogirajTambule](https://x.com/YogirajTambule).
+Part of Dwarka SkyGate, a student-led experimental rocketry project. Avionics, firmware and ground station by [Yogiraj Tambule](https://github.com/YogirajTambule); airframe, propulsion and hardware prototyping by the rest of the team. Build log on X: [@DwarkaSkyGate](https://x.com/DwarkaSkyGate).
 
 Released under the MIT License.
